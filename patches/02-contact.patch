@@ -1,0 +1,12 @@
+--- fetched.openapi.yaml	2021-02-26 11:51:02.000000000 -0500
++++ patched.openapi.yaml	2021-02-26 11:52:49.000000000 -0500
+@@ -366,7 +366,8 @@
+ 
+   contact:
+     name: Linode
+-    url: /
++    url: https://www.linode.com/support/
++    email: support@linode.com  
+ servers:
+ - url: https://api.linode.com/v4
+ - url: https://api.linode.com/v4beta

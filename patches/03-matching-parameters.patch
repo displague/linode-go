@@ -1,0 +1,12 @@
+--- fetched.openapi.yaml	2021-02-26 11:47:31.000000000 -0500
++++ patched.openapi.yaml	2021-02-26 11:46:05.000000000 -0500
+@@ -7356,7 +7355,7 @@
+       - lang: CLI
+         source: >
+           linode-cli lke pool-recycle 12345 456
+-  /lke/clusters/{clusterID}/nodes/{nodeId}:
++  /lke/clusters/{clusterId}/nodes/{nodeId}:
+     parameters:
+     - name: clusterId
+       in: path
+
