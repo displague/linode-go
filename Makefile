@@ -4,6 +4,8 @@ SPEC_URL:=https://www.linode.com/docs/api/openapi.yaml
 SPEC_FETCHED_FILE:=fetched.openapi.yaml
 SPEC_PATCHED_FILE:=patched.openapi.yaml
 IMAGE=openapitools/openapi-generator-cli
+GIT_ORG=displague
+GIT_REPO=linode-go
 
 SWAGGER=docker run --rm -v $(CURDIR):/local ${IMAGE}
 
@@ -27,5 +29,8 @@ patch:
 gen:
 	${SWAGGER} generate -g go \
 		--model-package types \
+		--api-package models \
+		--git-user-id ${GIT_ORG} \
+		--git-repo-id ${GIT_REPO} \
 		-o /local/v1 \
 		-i /local/${SPEC_PATCHED_FILE}
