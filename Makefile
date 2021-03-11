@@ -6,6 +6,7 @@ SPEC_PATCHED_FILE:=patched.openapi.yaml
 IMAGE=openapitools/openapi-generator-cli
 GIT_ORG=displague
 GIT_REPO=linode-go
+PACKAGE_MAJOR=v1
 
 SWAGGER=docker run --rm -v $(CURDIR):/local ${IMAGE}
 
@@ -28,9 +29,10 @@ patch:
 
 gen:
 	${SWAGGER} generate -g go \
+		--package-name ${PACKAGE_MAJOR} \
 		--model-package types \
 		--api-package models \
 		--git-user-id ${GIT_ORG} \
 		--git-repo-id ${GIT_REPO} \
-		-o /local/v1 \
+		-o /local/${PACKAGE_MAJOR} \
 		-i /local/${SPEC_PATCHED_FILE}
